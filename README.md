@@ -1,1 +1,3 @@
 # Leetcode-30-days-Javascript-Study-Guide
+
+As I work my way through [Leetcode's 30 days of JavaScript Challenge](https://leetcode.com/studyplan/30-days-of-javascript/) study plan, I will be using this repo as a study guide to keep track of solutions, explanations, notes, and resources for every question or topic. My main motivation for this is to track my progress in an organized manner so that I am not simply forgetting about a concept and neglecting to learn about its real world use cases after I submit a problem. This will also serve as as a reference to look back on as I continue develop a deeper mastery of how JavaScript really works.
