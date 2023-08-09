@@ -10,10 +10,11 @@ var compose = function(functions) {
         if (functions.length === 0) return x;
 
         for (let i = functions.length -1; i >= 0; i--){
-        // execute first callback passed to outer function on x, store result
-        // call each subsequent callback on previous result
+            // execute first callback passed to outer function on x, store result
+            // call each subsequent callback on previous result
             x = functions[i](x);
         }
+
         return x;
     }
 };
@@ -178,15 +179,18 @@ function fullStackDev(name, age){
 As you can see, each of the objects returned by the factory functions can use the functions that they were composed of
 
 ```JS
+const brynn = frontEndDev('Brynn', 22);
 brynn.buildReactComponent();
 // Brynn is creating the component
 
+
+const danae = backEndDev('Danae', 21);
 danae.runServer();
 // Danae is spinning up a server
 
+const nirav = fullStackDev('Nirav', 24);
 nirav.buildReactComponent();
 // Nirav is creating the component
-
 nirav.runServer();
 // Nirav is spinning up a server
 ```
