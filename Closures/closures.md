@@ -13,7 +13,7 @@ we have an outer function 'counter' which accepts a number and returns an inner 
 
 Lets walk through the code, line by line:
 
-```
+```JavaScript
 function outer(num){
     return function increment(){
         num = num + 1;

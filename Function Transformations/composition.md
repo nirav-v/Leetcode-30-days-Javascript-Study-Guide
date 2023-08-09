@@ -4,7 +4,7 @@
 
 solution:
 
-```
+```JS
 var compose = function(functions) {
 	return function(x) {
         if (functions.length === 0) return x;
@@ -38,7 +38,7 @@ First to understand how composition is used to create objects, lets briefly cove
 
 A factory function is simply a function that returns an object like so
 
-```
+```JS
 function person(name, age){
      return {
         intro() {
@@ -59,7 +59,7 @@ nirav.intro()
 
 The same goal could be achieved with a class (syntax sugar over a constructor function) like so
 
-```
+```JS
 class Person {
     constructor(name, age){
         this.name = name;
@@ -78,7 +78,7 @@ Say we want to create some different types of people objects that inherit from t
 
 For example, a frontend dev:
 
-```
+```JS
 class frontEndDev extends Person  {
     constructor(name, age){
         super(name, age)
@@ -92,7 +92,7 @@ class frontEndDev extends Person  {
 
 and also a backend dev:
 
-```
+```JS
 class backEndDev extends Person  {
     constructor(name, age){
         super(name, age)
@@ -114,7 +114,7 @@ Here is an alternative solution using composition:
 
 First we define the intro() buildReactComponent() and runServer() methods as their own individual functions that act on a shared state
 
-```
+```JS
 const intro = (state) => console.log(`hi, my name is ${state.name}, I am ${state.age} years old`)
 
 const buildReactComponent = (state) => console.log(`${state.name} is creating the component`);
@@ -127,7 +127,7 @@ and now, we can have three different factory functions instead of classes, that 
 
 a person can only intro
 
-```
+```JS
 
 function person(name, age){
     return {
@@ -143,7 +143,7 @@ bob.intro()
 
 A frontEndDev can intro and buildReactComponent
 
-```
+```JS
 function frontEndDev(name, age){
     return {
         intro: () => intro({name, age}),
@@ -154,7 +154,7 @@ function frontEndDev(name, age){
 
 A backEndDev can intro and runServer
 
-```
+```JS
 function backEndDev(name, age){
     return {
         intro: () => intro({name, age}),
@@ -165,7 +165,7 @@ function backEndDev(name, age){
 
 A fullStackDev can do it all
 
-```
+```JS
 function fullStackDev(name, age){
     return {
         intro: () => intro({name, age}),
@@ -177,7 +177,7 @@ function fullStackDev(name, age){
 
 As you can see, each of the objects returned by the factory functions can use the functions that they were composed of
 
-```
+```JS
 brynn.buildReactComponent();
 // Brynn is creating the component
 

@@ -4,7 +4,7 @@
 
 My Solution:
 
-```
+```JavaScript
 var createCounter = function(n) {
     // keep track of calls to inner function so that we do not increment n on the first call
     let calls = 0;
@@ -21,11 +21,12 @@ var createCounter = function(n) {
 
 test:
 
-```
-* const counter = createCounter(10)
- * counter() // 10
- * counter() // 11
- * counter() // 12
+```JS
+    const counter = createCounter(10)
+    counter() // 10
+    counter() // 11
+    counter() // 12
+
 ```
 
 ### Explanation:
@@ -38,10 +39,12 @@ The purpose of this function is know wether the inner function is being called f
 
 nicer solution:
 
-```
+```JS
+
 var createCounter = function(n) {
     return ()=> n++
 };
+
 ```
 
 Explanation:
@@ -50,3 +53,11 @@ Explanation:
 - n = n + 1 is an assignment operator to reassign the value of n
 - n++ is the [post increment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment) operator which increments n, but returns the original value of n before it was incremented
 - therefore on the first inner function call n++ will still return n and not n + 1, but since n is still incremented in memory, its updated value is returned by the next call
+
+```
+
+```
+
+```
+
+```
